@@ -1,0 +1,700 @@
+@font-face {
+	font-family: "Sketch Block";
+	src: url("./fonts/sketch-block/dahot2.Sketch_Block.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "Raleway";
+	src: url("./fonts/raleway/Raleway-Medium.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "HVD Comic Serif Pro";
+	src: url("./fonts/HVD-Comic-Serif-Pro/HVD_Comic_Serif_Pro.otf") format('opentype');
+}
+
+@font-face {
+	font-family: "norwester";
+	src: url("./fonts/norwester/norwester.otf") format('opentype');
+}
+
+html {
+	font-size: 62.5%;	/* 1 rem is now 62.5% of 16px (browser default); 1rem ~= 10px*/
+}
+
+html * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Raleway, serif;
+	font-size: 1.5em; /* Body font size approx. 14px */
+	background-color: white;
+	color: #595959;
+}
+
+h1 {
+	font-family: "Sketch Block", serif;	
+	font-size: 4.1em;	
+	font-weight: bold;
+	color: #FF5B35;	
+	/*text-align: center;*/
+}
+
+h2 {
+	font-family: "HVD Comic Serif Pro", serif;
+	font-size: 1.85em;
+	color: #346094;
+	/*text-align: center;*/
+}
+
+li {
+	/*list-style-type: none;*/
+	/*list-style-position: inside;*/
+}
+
+#wrapper {
+	padding: 0;
+}
+
+#header {
+	margin-bottom: 40px;
+	padding: 20px 20px 20px;
+	z-index: 1;
+}
+
+	#header .logo:hover {
+		transform: scale(1.2);
+		transition-duration: 0.4s;
+	}
+
+	#menu-open,
+	#menu-close {
+		filter: invert(47%) sepia(9%) saturate(2785%) hue-rotate(124deg) brightness(102%) contrast(96%);
+	}
+
+	#menu-open:hover,
+	#menu-close:hover {
+		transform: scale(1.2);
+		transition-duration: 0.4s;
+	}
+
+	#main-menu-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0;
+		z-index: 1;
+		overflow: hidden;
+		opacity: 0;
+		transition: height 0.5s, opacity 0.5s;
+		background-image: url(../images/bg-menu.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	#main-menu-container.show {
+		height: 100%;
+		opacity: 1;
+	}
+
+	/* 
+	* get the value from CSS filter generator.
+	* https://codepen.io/sosuke/pen/Pjoqqp 
+	*/
+	#main-menu-container.show #menu-close {
+		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+	}
+
+	#main-menu-container.show #menu-close > img {
+		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+	}
+
+	#main-menu-container li {
+		list-style-type: none;
+	}
+
+	#main-menu-container {
+		padding: 20px 20px 12px;
+	}
+
+	#main-nav li {
+		margin-bottom: 26px;
+	}
+
+	#main-nav a {
+		font-family: "HVD Comic Serif Pro", serif;
+		text-decoration: none;
+		color: white;
+		font-size: 1.85em;
+		line-height: 2em;
+	}
+
+	#main-menu-container .social-icons li {
+		margin-right: 10px;
+	}
+
+	#main-menu-container .social-icons li > a > img {
+		border-radius: 50%;
+		padding: 9px;
+		background-color: #77bc1f;
+	}
+
+	#main-menu-container .copyright-right {
+		font-family: norwester, serif;
+		font-size: 1em;
+		/*color: white;*/
+	}
+
+#main-content {
+}
+
+	/*.media-container {
+    	margin-bottom: 100px;
+    	height: 357px;
+    	background-image: url(../images/Underwater-tile.jpg);
+    }*/
+
+    .description {
+		padding: 0 20px;
+		color: #1c1c1c;
+		line-height: 1.86em;
+		max-width: 486px;
+		margin: 0 auto;
+	}
+
+	.media-container {
+		/*position: relative;*/
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	#title-section {
+		margin-bottom: 60px;
+	}
+
+	#title-section h1 {
+		margin-bottom: 12px;
+		max-width: 265px;
+	}
+
+	#title-section .text-container > h2 {
+		margin-bottom: 60px;
+	}
+
+	#title-section .media-container {
+		margin-bottom: 100px;
+		height: 357px;
+		background-image: url(../images/Underwater-tile.jpg);
+	}
+
+	#title-section .media-container > img {
+		margin-top: 78px;
+	}
+
+	#features-section {
+		margin-bottom: 110px;
+	}
+
+	#features-section .text-container > h2 {
+		margin-bottom: 26px;
+	}
+
+	#features-section .media-container {
+		margin-bottom: 87px;
+		height: 309px;
+		background-image: url(../images/KAZ_2D_EIW_SFW_Textures-Grass.jpg);
+	}
+
+	#features-section .media-container > img {
+		margin-top: 98px;
+	}
+
+	#game-play-section {
+		margin-bottom: 114px;
+	}
+
+	#game-play-section .media-container {
+		margin-bottom: 95px;
+		height: 342px;
+		background-image: url(../images/dino-road-texture.jpg);
+	}
+
+	#play-game-carousel {
+		margin-top: 167px;
+		width: 335px;
+		height: 252px;
+	}
+
+	/*overwriting bootstrap */
+	#play-game-carousel .carousel-control-next,
+	#play-game-carousel .carousel-control-prev {
+		align-items: start;
+		opacity: 1;
+	}
+
+	#play-game-carousel .carousel-control-next {
+		right: auto;
+	}
+
+
+	#play-game-carousel .carousel-control-next .carousel-control-next-icon,
+	#play-game-carousel .carousel-control-prev .carousel-control-prev-icon {
+		position: absolute;
+		top: -96px;
+		width: 60px;
+		height: 60px;
+	}
+
+	#play-game-carousel .carousel-control-next .carousel-control-next-icon:hover,
+	#play-game-carousel .carousel-control-prev .carousel-control-prev-icon:hover {
+		transform: scale(1.1);
+		transition-duration: 0.4s;
+	}
+
+	#play-game-carousel .carousel-control-next .carousel-control-next-icon {
+		left: 80px;
+		background: url(../images/arrow-right.svg) center no-repeat;
+	}
+
+	#play-game-carousel .carousel-control-prev .carousel-control-prev-icon {
+		background: url(../images/arrow-left.svg) center no-repeat;
+	}
+
+	#slider-counter {
+		position: absolute;
+		top: -79px;
+		right: 0px;
+		font-family: "HVD Comic Serif Pro", serif;
+		font-size: 1.43em;
+		color: white;
+	}
+
+	#slider-counter .slash {
+		margin: 0 10px;
+	}
+
+	#about-us-section {
+		margin-bottom: 121px;
+	}
+
+	#about-us-section .text-container > h2 {
+		margin-bottom: 26px;
+	}
+
+	#about-us-section .description{
+		margin-bottom: 61px;
+	}
+
+	#about-us-section .media-container {
+		margin-bottom: 95px;
+		height: 375px;
+		background-image: url(../images/tropical-sand.jpg);
+	}
+
+	#about-us-section .media-container > img {
+		margin-top: 82px;
+	}
+
+	#about-us-section .logos > :first-child {
+		margin-right: 44px;
+	}
+
+#footer {
+	padding: 10px 20px;
+	background-image: url(../images/KAZ_2DEIW_SWTextures_02.jpg);
+}
+
+	#footer .logo-container {
+		margin: 50px 0 60px 0;
+	}
+
+	#footer .logo-container:hover {
+		transform: scale(1.1);
+		transition-duration: 0.4s;
+	}
+
+	#footer .badge-container {
+		margin-bottom: 20px;
+	}
+
+	#footer .social-icons {
+		margin-bottom: 60px;
+		list-style-type: none;
+	}
+
+	#footer .social-icons li {
+		margin-right: 20px;
+		width: 34px;
+		height: 34px;
+	}
+
+	#footer .social-icons li > a > img {
+		border-radius: 50%;
+		padding: 9px;
+		background-color: #77bc1f;
+	}
+
+	#back-to-top-container {
+		margin-bottom: 60px;
+	}
+
+	#back-to-top-container > a {
+		font-family: "HVD Comic Serif Pro", serif;
+		text-decoration: none;
+		/*color: white;*/
+		font-size: 1.35em;
+	}
+
+	#back-to-top-container > a > img:hover {
+		transform: scale(1.1);
+		transition-duration: 0.4s;
+		/*background: url(../images/arrow-up-hover.svg) center no-repeat;*/
+	}
+
+	#back-to-top-container > a > :first-child {
+		margin-right: 18px;
+	}
+
+	#footer .copyright-left {
+		font-family: Raleway, serif;
+		font-size: 0.73em;
+	}
+
+	#footer .copyright-right {
+		font-family: norwester, serif;
+		font-size: 1em;
+		/*text-transform: uppercase;*/
+	}
+
+@media only screen and (min-width: 990px) {
+	#header {
+		position: fixed;
+		padding: 30px;
+		width: 100%;
+	}
+
+		#header .logo > img {
+			width: 100px;
+			height: auto;
+		}
+
+		#menu-open,
+		#menu-close {
+			filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+		}
+
+		#menu-open > img,
+		#menu-close > img {
+			width: 34px;
+			height: auto;
+			filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+		}
+
+		#main-menu-container {
+			padding: 30px 30px 12px;
+		}
+
+		#main-nav a {
+			font-size: 2.3em;
+			line-height: normal;
+		}
+
+		#main-menu-container .social-icons {
+			position: fixed;
+			top: 35%;
+			left: 30px;
+			/*transform: translateY(-50%);*/
+			width: 34px;
+		}
+
+		#main-menu-container .social-icons li {
+			margin-bottom: 7px;
+		}
+
+	#main-content {		
+	}
+
+		/* title, features, play game and about sections*/
+		#main-content > * {
+			margin-bottom: 0;
+			height: 100vh;
+		}
+
+		#main-content > * > h2 {
+			font-size: 1.86em;
+		}
+
+		#main-content .text-container{
+			width: 50%;
+		}
+
+		#main-content .text-container .description {
+			margin: 0;
+			font-size: 0.86em;
+			line-height: 2em;
+		}
+
+		#main-content .media-container{
+			margin-bottom: 0;
+			width: 42%;
+			height: 100vh;
+		}
+
+		#main-content .media-container > img {
+			margin-top: 0;
+		}
+
+		#title-section h1 {
+			max-width: 276px;
+			font-size: 4em;
+		}
+
+		#title-section .text-container {
+			padding-top: 90px;
+		}
+
+		#title-section .media-container > img {
+			margin-top: 0;
+			margin-left: -41px;
+			width: 286px;
+			height: auto;
+		}
+
+		#title-section .scroll-icon {
+			position: relative;
+		}
+
+		#title-section .scroll-icon-circle {
+			position: absolute;
+			top: 7px;
+			left: 10px;
+			animation: scroll-icon-circle-up-down 4s linear;
+			animation-iteration-count: infinite;
+		}
+
+		#title-section .scroll-icon-text {
+			margin-left: -19px;
+			font-family: "HVD Comic Serif Pro", serif;
+			font-size: 1.43em;
+			color: #f6b221;
+		}
+
+		#features-section .media-container > img {
+			margin-left: -23px;
+			width: 360px;
+			height: auto;
+		}
+
+		#play-game-carousel {
+			margin-top: 0;
+			margin-left: -150px;
+			width: 381px;
+			height: 287px;
+		}
+
+		#play-game-carousel .carousel-control-next, 
+		#play-game-carousel .carousel-control-prev {
+			display: inline-block;
+     		position: static; 
+		}
+
+		#play-game-carousel .carousel-control-prev {
+			margin-left: 163px;
+		}
+
+		#play-game-carousel .carousel-control-next .carousel-control-next-icon, 
+		#play-game-carousel .carousel-control-prev .carousel-control-prev-icon {
+			position: static; 
+			background-size: 45px 45px;
+		}
+
+		#slider-counter {
+			top: auto;
+			bottom: -45px;
+			font-size: 1.12em;
+		}
+
+		#about-us-section .text-container .description {
+			margin-bottom: 50px;
+		}
+
+		#about-us-section .cypha-logo {
+			width: 92px;
+			height: 68px;
+		}
+
+		#about-us-section .cheeky-logo {
+			width: 112px;
+			height: 65px;
+		}
+
+		#about-us-section .media-container > img {
+			margin-left: -33px;
+			width: 280px;
+		}
+
+	#footer {
+		padding: 20px 30px;
+		height: 100vh;
+	}
+
+		#footer .logo-container {
+			margin-top: 151px;
+			margin-bottom: 98px;
+		}
+
+		#footer .logo > img {
+			width: 260px;
+			height: 110px;
+		}
+
+		#footer .social-icons {
+			margin-bottom: 0;
+			position: fixed;
+			top: 35%;
+			left: 30px;
+			width: 34px;
+		}
+
+		#footer .social-icons > * {
+			margin-bottom: 10px;
+		}
+
+		#back-to-top-container > a {
+			font-size: 1.1em;
+		}
+
+		#back-to-top-container > a > :first-child {
+			width: 40px;
+			height: 40px;
+		}
+}
+
+@media only screen and (min-width: 1200px) {
+	#header {
+		padding: 50px;
+	}
+
+		#header .logo > img {
+			width: 128px;
+		}
+
+		#menu-open > img,
+		#menu-close > img {
+			width: 50px;			
+		}
+
+	#main-content {		
+	}
+
+		#main-content > * > h2 {
+			font-size: 2.36em;
+		}
+
+		#main-content .text-container .description {
+			max-width: 540px;
+			font-size: 1.07em;
+		}
+
+		.badge-container > * > img {
+			width: 176px;
+			height: auto;
+		}
+
+		#title-section h1 {
+			font-size: 5em;
+		}
+
+		#title-section h2 {
+			font-size: 2.57em;
+		}
+
+		#title-section .media-container > img {
+			width: 375px;
+			height: auto;
+		}
+
+		#features-section .media-container > img {
+			width: 475px;
+			height: auto;
+		}
+
+		#play-game-carousel {
+			margin-left: -177px;
+			width: 510px;
+			height: 384px;
+		}
+
+		#play-game-carousel .carousel-control-next,
+		#play-game-carousel .carousel-control-prev {
+			margin-top: 20px;
+		}
+
+		#play-game-carousel .carousel-control-prev {
+			margin-left: 191px;
+		}
+
+		#play-game-carousel .carousel-control-next .carousel-control-next-icon, 
+		#play-game-carousel .carousel-control-prev .carousel-control-prev-icon {
+			background-size: 60px 60px;
+		}
+
+		#slider-counter {
+			bottom: -69px;
+			font-size: 1.42em;
+		}
+
+		#about-us-section .media-container > img {
+			width: 380px;
+			height: auto;
+		}
+
+		#about-us-section .cypha-logo {
+			width: 120px;
+			height: 80px;
+		}
+
+		#about-us-section .cheeky-logo {
+			width: 153px;
+			height: 87px;
+		}
+
+	#footer {
+	}
+
+		#footer .logo > img {
+			width: 354px;
+			height: 144px;
+		}
+
+		#footer .social-icons {
+			left: 50px;
+		}
+
+		#back-to-top-container > a {
+			font-size: 1.2em;
+		}
+
+		#back-to-top-container > a > :first-child {
+			width: 60px;
+			height: 60px;
+		}
+}
+
+@keyframes scroll-icon-circle-up-down {
+	0% {
+		top: 7px;
+	}
+
+	50% {
+		top: 27px;
+	}
+
+	100% {
+		top: 7px;
+	}
+}
