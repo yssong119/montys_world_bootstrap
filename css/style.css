@@ -133,8 +133,42 @@ li {
 		opacity: 0;
 	}
 
+	#main-nav li:before {
+		font-family: "HVD Comic Serif Pro", serif;
+		text-decoration: none;
+		color: white;
+		font-size: 1.85em;
+		line-height: 2em;
+		position: absolute;
+		clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%, 0 100%);
+	}
+
+	#main-nav li:hover:before {
+		animation-name: coming2;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+		animation-delay: 0.15s;
+	}
+
 	#main-nav li:nth-child(1) {
 		transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1);
+	}
+
+	#main-nav li:nth-child(1):before {
+		content: "Home";
+	}
+
+	#main-nav li:nth-child(2):before {
+		content: "Features";
+	}
+
+	#main-nav li:nth-child(3):before {
+		content: "Game Play";
+	}
+
+	#main-nav li:nth-child(4):before {
+		content: "About Us";
 	}
 
 	#main-nav li:nth-child(2) {
@@ -162,6 +196,13 @@ li {
 		line-height: 2em;
 	}
 
+	#main-nav a:hover {
+		animation-name: coming;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+	}
+
 	#main-menu-container .badge-container {
 		position: relative;
 		bottom: -100px;
@@ -182,6 +223,11 @@ li {
 		border-radius: 50%;
 		padding: 9px;
 		background-color: #77bc1f;
+	}
+
+	#main-menu-container .social-icons li > a > img:hover {
+		transform: scale(1.1);
+		transition-duration: 0.4s;
 	}
 
 	#main-menu-container .copyright-right {
@@ -234,6 +280,10 @@ li {
 
 	#title-section .media-container > img {
 		margin-top: 78px;
+	}
+
+	#title-section .scroll-icon-container {
+		display: none;
 	}
 
 	#features-section {
@@ -379,6 +429,11 @@ li {
 		background-color: #77bc1f;
 	}
 
+	#footer .social-icons li > a > img:hover {
+		transform: scale(1.1);
+		transition-duration: 0.4s;
+	}
+
 	#back-to-top-container {
 		margin-bottom: 60px;
 	}
@@ -437,6 +492,11 @@ li {
 
 		#main-menu-container {
 			padding: 30px 30px 12px;
+		}
+
+		#main-nav li:before {
+			font-size: 2.3em;
+			line-height: normal;
 		}
 
 		#main-nav a {
@@ -503,6 +563,10 @@ li {
 			margin-left: -41px;
 			width: 286px;
 			height: auto;
+		}
+
+		#title-section .scroll-icon-container {
+			display: block;
 		}
 
 		#title-section .scroll-icon {
@@ -738,4 +802,32 @@ li {
 	100% {
 		top: 7px;
 	}
+}
+
+/* disappearing */
+@keyframes coming {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+  }
+}
+
+/* appearing */
+@keyframes coming2 {
+  0% {
+    color: #fff;
+    clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%, 0 100%);
+  }
+  50% {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 0 0);
+  }
+  100% {
+    color: #FE1679;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 100% 0);
+  }
 }

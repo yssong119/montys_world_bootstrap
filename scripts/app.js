@@ -2,25 +2,39 @@ $(document).ready(function() {
 	"use strict";
 
 	$("#menu-open").click(function() {
-		$("#main-menu-container").toggleClass("show");
+		$("#main-menu-container").addClass("show");
 	});
 
 	$("#menu-close").click(function() {
-		$("#main-menu-container").toggleClass("show");
+		$("#main-menu-container").removeClass("show");
 	});
 
-	$("#main-nav a").click(function() {
-		let aid = $(this).attr("href");
-		$('html, body').animate({scrollTop: $(aid).offset().top},'slow');
-		$("#main-menu-container").toggleClass("show");
+	// it is useless when adding before for animation.
+	// this is replaced with solution below.
+	// $("#main-nav a").click(function() {
+	// 	let aid = $(this).attr("href");
+	// 	$('html, body').animate({scrollTop: $(aid).offset().top},'slow');
+	// 	$("#main-menu-container").toggleClass("show");
+	// });
+
+	$("#main-menu-container").click(function() {
+		$(this).removeClass("show");
+	});
+
+	$("#main-nav li").click(function() {
+		let aid =  $(this).children("a").attr("href");
+		$('html,body').animate({scrollTop: $(aid).offset().top},'slow');
+		$("#main-menu-container").removeClass("show");
 	});
 
 	$(window).scroll(function() {
-		if($(this).scrollTop() < 150) {
-			$(".scroll-icon-container").fadeIn();
-		}
-		else {
-			$(".scroll-icon-container").fadeOut();
+		if($(this).width() >= 990) {
+			if($(this).scrollTop() < 150) {
+				$(".scroll-icon-container").fadeIn();
+			}
+			else {
+				$(".scroll-icon-container").fadeOut();
+			}
 		}
 	});
 
@@ -44,5 +58,5 @@ $(document).ready(function() {
 
 	// jQuery plugin for snap scrolling.
 	// https://www.jqueryscript.net/animation/Snap-To-Section-SnapScroll.html
-	// $("#main-content > *, #footer").SnapScroll();
+	$("#main-content > *, #footer").SnapScroll();
 });
